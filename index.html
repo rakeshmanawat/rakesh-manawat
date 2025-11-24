@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakesh Manawat</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="ribbin/help.html">
+    <!-- <link rel="stylesheet" href="ribbin/contact.html"> -->
+    <!-- <link rel="stylesheet" href="ribbin/about me.html"> -->
+    <!-- <link rel="stylesheet" href="ribbin/home.html"> -->
+    <link rel="stylesheet" href="Academic/B.Tech./Btech html/courses.html">
+    <link rel="stylesheet" href="Academic/M.Tech/mtech html/Courses.html">
+    <link rel="stylesheet" href="header.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<header class="fixedheader">
+
+    <h1>
+        👋 Welcome! I’m Rakesh Manawat.
+    </h1> 
+
+    <p class="subtitle">
+        A glimpse into my journey—where creativity meets professional excellence.
+
+    </p> 
+
+<section class="Container1"> 
+    <nav class="nav-links">
+        <a href="ribbin/ribbin html/home.html">&#8962; Home</a>
+        <!-- <a href="ribbin/about me.html">&#128100; About Me</a> -->
+        <!-- <a href="ribbin/contact.html">&#9993; Contact</a> -->
+        
+        <a href="ribbin/ribbin html/resume.html"; target="_blank">💼 Resume</a>
+        <a href="ribbin/ribbin html/Academic.html">&#x1F4DA; Academic</a>
+        <a href="ribbin/ribbin html/help.html">&#10067; Help</a>
+        
+    </nav>
+</section> 
+
+  <div class="right-logo">
+    <img src="images/logo5.png" alt="Website Logo">
+</div>
+
+</header>
+
+
+<body>
+
+<section class="Container">
+    <section class="resume-header1">  
+
+    <h2 style="font-size: 40px; color: white; margin-top: auto;">Rakesh Manawat</h2> 
+    
+    <image src= "images/rakesh.jpg" 
+    alt = "Rakesh passport photo"
+    height = "400px"
+    class="profile-image">
+
+    <p class="Mobile-No">📞 <strong>+91 96947 63686</strong></p>
+
+    <p>✉️ rakesh.manawat1@gmail.com  <br>✉️ rseervi329@gmail.com</p>
+
+    <p><b>🔗 github:</b> <a href="https://github.com/rakeshmanawat" target="_blank" style="color: rgb(176, 80, 80);" >github.com/rakeshmanawat</a></p> 
+
+    <p><b>🔗 Linkedin:</b> <a href="https://www.linkedin.com/in/rakesh-manawat-223951121" target="_blank" style="color: rgb(196, 103, 103);">rakesh-manawat</a></p>
+    
+
+    </section>   
+
+</body>
+
+<footer>
+    <section class="visitor-box">
+
+    <h2>📊 Visitor Analytics</h2>
+
+    <div class="visitor-row">
+        <span>👁️ Total Visitors:</span>
+        <span id="totalVisitors" class="count">0</span>
+    </div>
+
+    <div class="visitor-row">
+        <span>📅 Today:</span>
+        <span id="todayVisitors" class="count">0</span>
+    </div>
+
+    <div class="visitor-row">
+        <span>🗓️ Last 7 Days:</span>
+        <span id="weekVisitors" class="count">0</span>
+    </div>
+
+    <div class="visitor-row">
+        <span>📆 Last 30 Days:</span>
+        <span id="monthVisitors" class="count">0</span>
+    </div>
+
+    <div class="visitor-location">
+        🌍 You are visiting from: <span id="userLocation">Detecting...</span>
+    </div>
+
+    <canvas id="visitorChart"></canvas>
+
+</section>
+
+<script>
+
+// ---------- Animated Counter ----------
+function animateValue(id, start, end, duration) {
+    let obj = document.getElementById(id);
+    let range = end - start;
+    let startTime = performance.now();
+
+    function update(currentTime) {
+        let progress = Math.min((currentTime - startTime) / duration, 1);
+        obj.textContent = Math.floor(progress * range + start);
+        if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+}
+
+// ---------- Visitor Count Using CountAPI ----------
+async function updateVisitorCount() {
+    const namespace = "rakeshmanawat";
+    const keyTotal = "total-visitors";
+    const keyToday = new Date().toISOString().split("T")[0];  
+
+    // Increase total visitors
+    const total = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyTotal}`)
+        .then(res => res.json());
+
+    // Increase today's visitors
+    const today = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyToday}`)
+        .then(res => res.json());
+
+    animateValue("totalVisitors", 0, total.value, 1500);
+    animateValue("todayVisitors", 0, today.value, 1500);
+
+    return { total: total.value, today: today.value };
+}
+
+// ---------- Week & Month data ----------
+async function getRangeCount(days) {
+    let sum = 0;
+    let namespace = "rakeshmanawat";
+
+    for (let i = 0; i < days; i++) {
+        let date = new Date();
+        date.setDate(date.getDate() - i);
+        let key = date.toISOString().split("T")[0];
+
+        let value = await fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
+            .then(res => res.json())
+            .catch(() => ({ value: 0 }));
+
+        sum += value.value || 0;
+    }
+
+    return sum;
+}
+
+async function updateWeeklyMonthly() {
+    let week = await getRangeCount(7);
+    let month = await getRangeCount(30);
+
+    animateValue("weekVisitors", 0, week, 1500);
+    animateValue("monthVisitors", 0, month, 1500);
+
+    return { week, month };
+}
+
+// ---------- User Location ----------
+async function loadLocation() {
+    try {
+        let res = await fetch("https://ipinfo.io/json?token=2d9ed1f6e4d4d1");
+        let data = await res.json();
+        document.getElementById("userLocation").textContent =
+            `${data.city}, ${data.country}`;
+    } catch {
+        document.getElementById("userLocation").textContent = "Unknown";
+    }
+}
+
+// ---------- Visitor Chart ----------
+function drawChart(today, week, month, total) {
+    const ctx = document.getElementById("visitorChart").getContext("2d");
+
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: ["Today", "7 Days", "30 Days", "Total"],
+            datasets: [{
+                label: "Visitors",
+                data: [today, week, month, total],
+                backgroundColor: ["#00c2ff", "#00ffa2", "#ffd500", "#ff4f4f"],
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+}
+
+// ---------- Main Execution ----------
+(async function () {
+    const { total, today } = await updateVisitorCount();
+    const { week, month } = await updateWeeklyMonthly();
+    await loadLocation();
+    drawChart(today, week, month, total);
+})();
+
+</script>
+
+     &copy; 2025 Rakesh Manawat. All rights reserved.
+</footer>
+
+</html>
