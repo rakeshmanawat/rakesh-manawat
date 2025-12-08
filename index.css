@@ -1,0 +1,564 @@
+*{
+  font-family: Arial, sans-serif;
+  /* background-color: rgb(255, 255, 255);   */
+  background-position: center;
+  color: white;
+  font-size: large;
+  
+}
+
+/* Set background image for the entire page */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/backgroundall2.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: Arial, sans-serif;
+
+}
+
+
+/* FIXED HEADER */
+.fixedheader {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+   
+    /* background-color: #ffffff;  */
+  
+  color:unset;
+    padding: 20px 0 10px 0;
+    text-align: center;
+    /* z-index: 1000; */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+
+} 
+
+/* TITLE */
+/* .fixedheader h1 {
+    margin: 0;
+    font-size: 26px;
+    padding-bottom: 5px;
+} */
+
+/* SUBTITLE */
+/* .subtitle {
+    margin: 0;
+    font-size: 18px;
+    padding-bottom: 15px;
+} */
+
+/* NAV BAR */
+.nav-links {
+    display:inline;
+    font-size: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: rgb(255, 254, 254);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 6px 12px;
+    transition: 0.2s ease;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    background-color: #6098bb;
+}
+
+.nav-links a.active {
+    background-color: #00aaff;
+    color: #8e1d1d;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* PUSH PAGE CONTENT DOWN SO IT DOESN'T GO UNDER HEADER */
+/*body {
+    margin: 0;
+    padding-top: 150px;} /* adjust if header height changes*/
+
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: white; */
+    height: 0px; 
+}
+
+nav a{
+    /* color: white; */
+    text-decoration: none;
+    margin-left: 0px;
+    padding: 0px;
+    height: 20px;
+    /* background: white; */
+
+}
+
+/* Right-side Logo */
+.right-logo {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+.right-logo img {
+    height: 135px; 
+    width: 165px;       /* Change size as needed */
+    width: auto;
+    border-radius: 6px;  /* optional */
+    mix-blend-mode:screen
+
+}
+
+
+
+h1{
+    text-align: center;
+    padding: 10px 10px 0px 10px;
+
+}
+
+
+h2, h3{
+    text-align: center;
+    font-size: 20px;
+    color: white ;
+    
+}
+
+.Help{
+    background-image: url(images/backgroundall2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.resume-header {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    border-radius: 8px;
+    
+
+
+}
+
+/* Resume Main Header Section */
+.resume-header1 {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+
+    /* width control */
+    max-width: 900px;
+    margin: 0 auto 0 auto;   /* Start 150px below page top */
+
+    /* inner spacing */
+    padding: 20px;
+
+    /* visual styling */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+    /* smooth spacing */
+    line-height: 1.5;
+}
+
+
+
+.resume-header h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+
+
+}
+
+.profile-image {
+    display: block;
+    margin: 20px auto;
+    height: auto;
+    max-width: 200px;           /* scale size */
+    background: transparent;    
+    border-radius: 08px;            /* keep original look */
+    image-rendering: auto;
+    box-shadow: none;            /* keep clean design */
+    /* mix-blend-mode:screen */
+}
+
+.resume-header p {
+  margin: 8px 0;
+  font-size: 20px;
+  color: #ffffff;
+
+   
+}
+
+.resume-header a {
+  color: #0066cc;
+  text-decoration: none;
+
+   
+
+}
+
+.resume-header a:hover {
+  text-decoration: underline;
+}
+
+/* These classes are defined to put respective word in center */
+.Carrier, .Academic, .Technical, .Soft, .Projects, .Domain, .Strength, .Declaration, .Extra1, .Certification1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+  color: yellowgreen;
+}
+
+/* If View certificate is written then there is no special colour for this "View Certificate". */
+.Certification a, .Extra a{
+    text-decoration: none
+}
+
+/* When hover on the link it show underline with red colour.  */
+.Certification a:hover, .Extra a:hover { 
+  text-decoration: underline;
+  color: red;
+}
+
+
+/* Class Container properties defined */
+.Container{
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    /* background: white; */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    border-radius: 8px;
+    /* background-color: white; */
+}
+
+footer{
+    text-align: center;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  margin-top: 10px;
+  border-radius: 4px;
+  border:none; 
+}
+
+
+th, td {
+  padding: 10px;
+  border: 0.05px solid #ccc;
+  background: rgba(255,255,255,0.001);
+  text-align: left;
+  border-radius: 4px;
+}
+
+
+.download-btn {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white; 
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-size: 17px;
+}
+
+.download-btn:hover {
+  background-color: #7f878f; 
+}
+
+
+    #back-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;   /* Blue box */
+      color: rgb(120, 9, 9);
+      font-size: 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease; /* Smooth hover effect */
+      cursor: pointer;
+    }
+
+    /* Change color when hovered */
+    #back-link:hover {
+      background-color: #0056b3;  /* Darker blue on hover */
+    }
+  
+
+  .download-menu {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    /* background: white; */
+    /* border: 1px solid #ddd; */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+
+.download-menu button {
+    display: block;
+    width: 140px;
+    margin: 6px 0;
+    /* padding: 8px; */
+    border: none;
+    background: #e2eaf3;   
+    /* color: white; */
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-menu button:hover {
+    background: #003685;
+}
+
+.download-wrapper {
+    position: relative; 
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Hidden by default */
+.download-menu {
+    display: none;
+    position: absolute;
+    top: 110%;     /* directly under button */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.download-menu button {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    background-color: #de3310;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.download-menu button:hover {
+    background-color: #003685;
+}
+
+
+
+
+/* Intro Section */
+.intro-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen */
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.intro-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.intro-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: #1c92d2;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+    color: #1c92d2;
+    transform: translateY(-3px);
+}
+
+
+
+a{
+    text-decoration: none;
+    
+}
+
+a:hover{
+    text-decoration:maroon;
+}
+
+.project-box {
+    /* border: 2px solid #ffffff; */
+    background: rgba(255,255,255,0.05);
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.project-box:hover {
+    border-color: #00aaff;
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Project Title Link */
+.project-box a {
+    font-size: 20px;
+    color: #00c3ff;
+    text-decoration: none;
+}
+
+/* On hover, link color changes */
+.project-box a:hover {
+    /* color: #ffffff; */
+    text-decoration:none;
+}
+
+/* Description text */
+.project-box p {
+    font-size: 16px;
+    /* color: #eee; */
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+
+.visitor-box {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 10px;
+    background:none;
+    backdrop-filter: blur(6px);
+    box-shadow: 0px 4px 18px rgba(0,0,0,0.5);
+    padding-bottom: 0 !important;
+}
+
+.visitor-row {
+    display: flexbox;
+    justify-content:space-between;
+    margin: 10px 10px;
+    font-size: 20px;
+}
+
+.count {
+    font-weight: bold;
+    color: #00ffea;
+}
+
+.visitor-location {
+    margin-top: 5px !important;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+
+}
+
+#visitorChart {
+    margin-top: 2px !important;
+    padding-top: 0 !important;
+}
+
+
+
+
+
+/* Wrapper for the project list */
+.project-list {
+    list-style: none;
+    padding: 38px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items:center;
+    gap: 15px 30px ;
+}
+
+/* Make each item behave like a box */
+.project-list li {
+    margin: 0;
+    flex: 0 0 160px;
+}
+
+/* Style for each project link */
+.project-list li a {
+    display: block;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    transition: 0.3s ease;
+}
+
+/* Hover animation */
+.project-list li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+/* Center last item if alone in last row */
+/* .project-list li:last-child {
+    margin-left: auto;
+    margin-right: auto;
+} */

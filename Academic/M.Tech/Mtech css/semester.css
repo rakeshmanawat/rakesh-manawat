@@ -1,0 +1,66 @@
+.table-content{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Header row */
+.table-content thead th {
+    background: #004aad;        /* theme blue */
+    color: #ffffff;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Table rows */
+.table-content tbody tr {
+    transition: background 0.2s ease;
+}
+
+.table-content tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #855050;
+}
+
+/* Hover effect */
+.table-content tbody tr:hover {
+    background: #b8c7e0 !important;
+    cursor: pointer;
+}
+
+/* Alternating row colors (optional) */
+.table-content tbody tr:nth-child(odd) {
+    background: #fafafa;
+}
+
+/* Remove the border attribute effect */
+.table-content,
+.table-content th,
+.table-content td {
+    /* border: none !important; */
+    border: #b3b7be;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .table-content td, .table-content th {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+h2 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 20px;
+    color: #003b82;
+}

@@ -1,0 +1,157 @@
+
+
+/* Project Container */
+.project-box {
+    background: rgba(0, 0, 0, 0.35); /* Semi-transparent dark background */
+    padding: 25px 30px;
+    margin: 25px auto;
+    max-width: 900px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px); /* Glass effect */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    cursor: pointer;
+}
+
+/* Hover: Lift + Glow + Scale */
+.project-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid #00c3ff; /* Glow border */
+}
+
+/* Glow Animation Border */
+.project-box::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #00c3ff, #ffd500, #ff4f4f, #00ffa2);
+    background-size: 300% 300%;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: glow 6s ease infinite;
+}
+.project-box:hover::before {
+    opacity: 0.15;
+}
+@keyframes glow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Content inside card stays above glow */
+.project-box > * {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+   
+}
+
+/* Project Title */
+.project-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #2923d3;
+}
+.project-box:hover .project-title {
+    color: #ffd500;
+}
+
+/* Tech Stack */
+.tech-stack {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    color: #00ffa2;
+    margin-bottom: 15px;
+}
+
+/* Project Objective */
+.project-objective {
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Sub Headings */
+.sub-heading {
+    font-size: 20px;
+    color: #ffea00;
+    margin: 15px 0 10px 0;
+   
+}
+
+/* Bullet Points */
+.project-points {
+    margin-left: 20px;
+    list-style: disc inside;
+}
+.project-points li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Skill badges */
+.skills{
+    display: inline-block;
+    gap: 50px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: #00c3ff;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+.project-box:hover .skills {
+    background: #ffd500;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Project Button */
+.project-btn {
+    display: inline-block;
+    padding: 6px 26px;
+    border-radius: 20px;
+    background: #00c3ff;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-left: 20px;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.project-box:hover .project-btn {
+    background: #0099cc;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .project-box { padding: 20px; }
+    .project-title { font-size: 24px; }
+    .project-objective { font-size: 15px; }
+    .sub-heading { font-size: 18px; }
+    .skills { font-size: 13px; padding: 5px 12px; }
+}
+
+/* Smooth card hover animation */
+.project-box {
+    transition: all 0.5s ease;
+}
