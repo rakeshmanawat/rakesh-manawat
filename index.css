@@ -2,14 +2,14 @@
    RESPONSIVE DESIGN
 --------------------------------------------------------- */
 @media (max-width: 900px) {
-    .header-logo img {
+    .right-logo img {
         width: 100px;
     }
 }
 
 @media (max-width: 600px) {
 
-    .header-logo {
+    .right-logo {
         display: none;
     }
 
@@ -17,24 +17,24 @@
         display: none !important;
     }
     
-    .profile-img {
+    /* .profile-img {
         width: 150px;
     }
 
     .project-grid li {
         flex: 0 0 45%;
-    }
+    } */
 }
 
 @media (max-width: 420px) {
 
-    .profile-img {
+    /* .profile-img {
         width: 120px;
     }
 
     .project-grid li {
         flex: 0 0 100%;
-    }
+    } */
 }
 
 
