@@ -1,0 +1,184 @@
+* {
+  font-family: Arial, sans-serif;
+  background-position: center;
+  color: white;
+  font-size: large;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/backgroundall2.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Resume Header */
+.resume-header {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.resume-header h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.profile-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+    border-radius: 8px;
+}
+
+.resume-header p {
+  margin: 8px 0;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.resume-header a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.resume-header a:hover {
+  text-decoration: underline;
+}
+
+/* Section Headings */
+.Carrier, .Academic, .Technical, .Soft, .Projects, 
+.Domain, .Strength, .Declaration, .Extra1, .Certification1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+  color: yellowgreen;
+}
+
+/* Main container */
+.Container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: separate;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+th, td {
+  padding: 10px;
+  border: 0.05px solid #ccc;
+  background: rgba(255,255,255,0.001);
+  text-align: left;
+  border-radius: 4px;
+}
+
+/* Download Button */
+.download-btn {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-size: 17px;
+}
+
+.download-btn:hover {
+  background-color: #7f878f;
+}
+
+.download-wrapper {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-menu {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+}
+
+.download-menu button {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    background-color: #de3310;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.download-menu button:hover {
+    background-color: #003685;
+}
+
+/* Project Boxes */
+.project-box {
+    background: rgba(255,255,255,0.05);
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.project-box:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+}
+
+.project-box a {
+    font-size: 20px;
+    color: #00c3ff;
+    text-decoration: none;
+}
+
+.project-box p {
+    font-size: 16px;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* Certification & Extra links */
+.Certification a, .Extra a {
+    text-decoration: none;
+}
+
+.Certification a:hover, .Extra a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+footer {
+    text-align: center;
+}
