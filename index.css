@@ -5,6 +5,10 @@
     .right-logo img {
         width: 100px;
     }
+
+     .right-logo {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -35,6 +39,10 @@
     .project-grid li {
         flex: 0 0 100%;
     } */
+
+     .right-logo {
+        display: none;
+    }
 }
 
 
